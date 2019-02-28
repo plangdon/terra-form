@@ -3,9 +3,32 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+
+    function sendData(command) {
+      var oReq = new XMLHttpRequest();
+
+        oReq.onload = function(e) {
+          var arraybuffer = oReq.response; // not responseText
+          /* ... */
+
+          alert(JSON.stringify(oReq.response));
+        }
+        oReq.open("GET", "/api/" + command);
+        oReq.responseType = "text";
+        oReq.send();
+
+    }
+
+    </script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>TerraForm</h1>
+    <p>An Educational Platform for Enviornmental Controls and Discovery</p>
+    <button onclick="sendData('cycle')">Cycle</button>
+    </br>
+    <button onclick="sendData('lightning')">Lightning</button>
+    <button>Test</button>
+    <button>Test</button>
   </body>
 </html>
