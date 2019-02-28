@@ -9,6 +9,7 @@ opkg install git git-http ca-bundle
 git clone https://github.com/plangdon/terra-form.git
 
 cd terra-form
+npm install
 npm start
 
 
